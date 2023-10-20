@@ -17,7 +17,7 @@ public class GetEntireMarketDataBarsCommandHandler implements Command.Handler<Ge
     }
 
     @Override
-    public List<StockBar> handle(GetEntireMarketDataBarsCommand getEntireMarketDataBarsCommand) {
-        return null;
+    public List<StockBar> handle(GetEntireMarketDataBarsCommand barsCommand) {
+        return polygonStockProviderRepo.getBarsForEntireMarket(barsCommand.startDate(), barsCommand.endDate());
     }
 }
